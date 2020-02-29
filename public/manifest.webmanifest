@@ -1,0 +1,42 @@
+{
+	"name": "dev.yommail.tk",
+	"short_name": "dev",
+	"description": "DevSite for yommail.tk",
+	"icons": [
+		{
+			"src": "/images/icons-64.png",
+			"type": "image/png",
+			"sizes": "64x64",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/images/icons-128.png",
+			"type": "image/png",
+			"sizes": "128x128",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/images/icons-256.png",
+			"type": "image/png",
+			"sizes": "256x256",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/images/icons-512.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/images/icons-1024.png",
+			"type": "image/png",
+			"sizes": "1024x1024",
+			"purpose": "any maskable"
+		}
+	],
+	"start_url": "/",
+	"background_color": "#3C3CAF",
+	"theme_color": "#3C3CAF",
+	"scope": "/",
+	"display": "standalone"
+}

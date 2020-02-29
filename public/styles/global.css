@@ -1,0 +1,59 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+body {
+	--background-color: white;
+	--text-color: black;
+	--title-color: white;
+
+	--accent-color: rgb(85, 85, 255);
+	--default-color: rgb(60, 60, 175);
+}
+
+body.dark {
+	--background-color: rgba(20, 20, 20, 1);
+	--text-color: white;
+}
+
+div.container {
+	width: 100vw;
+	height: 100vh;
+
+	position: relative;
+}
+
+h1 {
+	color: var(--title-color);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--text-color);
+}
+
+h1,
+h3,
+a,
+li {
+	font-family: monospace;
+}
+
+h2,
+h4 {
+	font-family: OpenSans;
+}
+
+@font-face {
+	font-family: OpenSans;
+	src: url("../fonts/OpenSans-SemiBold.ttf");
+}

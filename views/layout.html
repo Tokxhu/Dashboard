@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="manifest" href="/manifest.webmanifest">
+	<link rel="stylesheet" href="/styles/global.css">
+	<link rel="stylesheet" href="/styles/layout.css">
+	{% block head %}
+	{% endblock %}
+</head>
+
+<body>
+	<header>
+		<div class="hamburger hamburger--squeeze" onclick="hamburgerClick()">
+			<div class="hamburger-box">
+				<div class="hamburger-inner"></div>
+			</div>
+		</div>
+		<h1 class="title">dev.yommail.tk</h1>
+	</header>
+	<div class="rest">
+		<nav class="links" onclick="hamburgerClick()">
+			<div id="top">
+				{% for link in links %}
+				<div class="divider"></div>
+				{% include "components/link.html" %}
+				{% endfor %}
+			</div>
+			<div id="bottom">
+				<li onclick="installPWA()" id="pwaButton">
+					<img style="color: white" src="/images/PWA.svg" alt="PWA">
+					<p>Install PWA</p>
+				</li>
+				<div class="divider"></div>
+				<li onclick='toggleTheme()'>
+					<img style="transform: rotate(135deg)" src="/images/dark_mode.svg" alt="dark_mode">
+					<p>Dark Mode</p>
+				</li>
+				<div class="divider"></div>
+				<li>
+					<img src="/images/settings.svg" alt="settings">
+					<p>Settings</p>
+				</li>
+			</div>
+		</nav>
+		<div id="body">
+			{% block body %}
+			<h1>Something went wrong</h1>
+			{% endblock %}
+		</div>
+	</div>
+</body>
+
+<script src="/scripts/layout.js"></script>
+{% block scripts %}
+{% endblock %}
+
+</html>

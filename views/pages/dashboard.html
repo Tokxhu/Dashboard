@@ -1,0 +1,41 @@
+{% extends '../layout.html' %}
+
+{% block head %}
+<title>Dev - Yommail</title>
+<link rel="stylesheet" href="/styles/dashboard.css">
+{% endblock %}
+
+{% block body %}
+<h2 class="subtitle">Usage</h2>
+<div id="usage">
+	<div class="cpu">
+		<div class="canvasContainer">
+			<canvas></canvas>
+			<h4 class="cpuTemp"></h4>
+		</div>
+		<div class="titles">
+			<h4>CPU Temp</h4>
+		</div>
+	</div>
+	<div class="ram">
+		<div class="canvasContainer">
+			<canvas></canvas>
+			<h4 class="ramUsage"></h4>
+		</div>
+		<div class="titles">
+			<h4>RAM Usage</h4>
+		</div>
+	</div>
+</div>
+<h2 class="subtitle">Harddrives</h2>
+<div id="harddrives">
+	{% for harddrive in hw.harddrives %}
+	{% include "../components/harddrive.html" %}
+	{% endfor %}
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+<script src="/scripts/dashboard.js"></script>
+{% endblock %}

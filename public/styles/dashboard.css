@@ -1,0 +1,110 @@
+#harddrives,
+#usage {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	--size: 100vw;
+	scroll-snap-type: x mandatory;
+
+	max-width: 100%;
+}
+
+h2.subtitle {
+	margin: 0.5em 0;
+}
+
+div.harddrive,
+div.cpu,
+div.ram {
+	border-radius: 0.25em;
+	border: 1px solid gray;
+}
+
+div.harddrive,
+div.cpu,
+div.ram {
+	min-width: 100%;
+
+	padding: 2em;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	scroll-snap-align: start;
+}
+
+div.harddrive:first-child {
+	margin: 1em 0.5em 1em 0;
+}
+
+div.harddrive:last-child {
+	margin: 1em 0 1em 0.5em;
+}
+
+div.harddrive:not(:first-child):not(:last-child) {
+	margin: 1em 1em;
+}
+
+.canvasContainer {
+	position: relative;
+}
+
+.canvasContainer,
+canvas {
+	width: calc(var(--size) * 0.7);
+	height: calc(var(--size) * 0.7 * (3 / 4));
+}
+
+.canvasContainer h4 {
+	position: absolute;
+	top: 50%;
+
+	width: 100%;
+
+	text-align: center;
+	font-size: 2.5em;
+	font-weight: 300;
+}
+
+.titles {
+	text-align: center;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	#harddrives,
+	#usage {
+		--size: 24em;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.harddrive,
+	div.cpu,
+	div.ram {
+		min-width: var(--size) !important;
+	}
+	div.harddrive,
+	div.cpu,
+	div.ram {
+		margin: 1em !important;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	/* #harddrives {
+		--size: 30em;
+	} */
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
