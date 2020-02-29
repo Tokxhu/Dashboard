@@ -26,7 +26,7 @@ let toggleTheme = () => {
 	darkmode = !darkmode
 	document.cookie = `darkmode=${darkmode ? 1 : 0}`
 	document.body.classList.toggle("dark")
-	if (document.location.href.endsWith('.tk/')) drawHarddriveUsage();
+	if (document.location.href.endsWith('.tk/')) ping();
 }
 
 let hamburgerClick = () => {

@@ -15,16 +15,12 @@ h2.subtitle {
 	margin: 0.5em 0;
 }
 
-div.harddrive,
-div.cpu,
-div.ram {
+.dashboard-container {
 	border-radius: 0.25em;
 	border: 1px solid gray;
 }
 
-div.harddrive,
-div.cpu,
-div.ram {
+.dashboard-container {
 	min-width: 100%;
 
 	padding: 2em;
@@ -37,15 +33,15 @@ div.ram {
 	scroll-snap-align: start;
 }
 
-div.harddrive:first-child {
+.dashboard-container:first-child {
 	margin: 1em 0.5em 1em 0;
 }
 
-div.harddrive:last-child {
+.dashboard-container:last-child {
 	margin: 1em 0 1em 0.5em;
 }
 
-div.harddrive:not(:first-child):not(:last-child) {
+.dashboard-container:not(:first-child):not(:last-child) {
 	margin: 1em 1em;
 }
 
@@ -79,26 +75,23 @@ canvas {
 	#harddrives,
 	#usage {
 		--size: 24em;
-		flex-direction: row;
-		flex-wrap: wrap;
 	}
-	.harddrive,
-	div.cpu,
-	div.ram {
+	.dashboard-container {
 		min-width: var(--size) !important;
 	}
-	div.harddrive,
-	div.cpu,
-	div.ram {
+	.dashboard-container {
 		margin: 1em !important;
 	}
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-	/* #harddrives {
+	#harddrives,
+	#usage {
 		--size: 30em;
-	} */
+		flex-direction: row;
+		/* flex-wrap: wrap; */
+	}
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
