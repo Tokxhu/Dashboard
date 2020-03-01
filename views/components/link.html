@@ -1,4 +1,8 @@
-<li onclick="document.location.href ='{{ link.url }}'">
+<li class="link {{ link.name }}" onclick="document.location.href ='{{ link.url }}'">
 	<img src="/images/{{ link.name }}.svg" alt="{{ link.name }} icon">
+	{% if link.type === 'proxy' %}
 	<p>/{{ link.name }}</p>
+	{% else %}
+	<p>{{link.name[0].toUpperCase() + link.name.substr(1)}}</p>
+	{% endif %}
 </li>

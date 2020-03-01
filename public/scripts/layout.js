@@ -1,5 +1,5 @@
 let links = document.querySelector("nav.links");
-let hamburgerButton = document.querySelector(".hamburger")
+let settingsOverlay = document.querySelector("#settingsOverlay")
 
 window.addEventListener('beforeinstallprompt', (event) => {
 	console.log('👍', 'beforeinstallprompt', event);
@@ -29,11 +29,6 @@ let toggleTheme = () => {
 	if (document.location.href.endsWith('.tk/')) ping();
 }
 
-let hamburgerClick = () => {
-	hamburgerButton.classList.toggle("is-active")
-	links.classList.toggle("shown")
-}
-
 let installPWA = () => {
 	const promptEvent = window.deferredPrompt;
 	console.log("Install clicked", promptEvent)
@@ -45,4 +40,12 @@ let installPWA = () => {
 		console.log('👍', 'userChoice', result);
 		window.deferredPrompt = null;
 	});
+}
+
+let toggleSettings = () => {
+	settingsOverlay.classList.toggle("shown")
+}
+
+let saveSettings = () => {
+	toggleSettings()
 }

@@ -44,7 +44,7 @@ app.post('/login', (req, res) => {
 			path: '/'
 		}).sendStatus(200)
 	} catch (err) {
-		res.status(418).send(err.message)
+		res.status(403).send(err.message)
 	}
 })
 
@@ -79,6 +79,11 @@ let links = [
 	{
 		name: 'dashboard',
 		url: '/',
+		type: 'sublink'
+	},
+	{
+		name: 'settings',
+		url: '/settings',
 		type: 'sublink'
 	}
 ].sort((a, b) => a.name.localeCompare(b.name))
@@ -117,16 +122,18 @@ let getHW = async () => {
 }
 
 const httpProxy = require('http-proxy')
-const proxy = httpProxy.createProxyServer()
-
-proxy.on('error', (err, req, res) => res.send(400, err))
-
+const proxy = httpProxy.createProxyServer({
+	xfwd: true
+})
+	.on('error', (err, req, res) => res.send(400, err))
+	.on('proxyReq', (proxyReq, req, res, options) => {
+		if (proxyReq.path.startsWith('/qbt')) proxyReq.path = `/${proxyReq.path.split('/').slice(2).join('/')}`
+	});
 
 for (let index in links) {
 	let { name, url, type } = links[index];
 	if (type === 'proxy') {
 		app.all(`/${name}/*`, (req, res) => {
-			console.log(name)
 			proxy.web(req, res, { target: url })
 		})
 		app.all(`/${name}`, (req, res) => res.redirect(`/${name}/`))

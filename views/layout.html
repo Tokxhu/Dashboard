@@ -21,24 +21,18 @@
 		<h1>Something went wrong</h1>
 		{% endblock %}
 	</div>
-	<nav class="links" onclick="hamburgerClick()">
-		{% for link in links %}
-		<div class="divider"></div>
+	<nav class="links">
+		{% for link in links %}<div class="divider {{ link.name }}"></div>
 		{% include "components/link.html" %}
 		{% endfor %}
-		<li onclick="installPWA()" id="pwaButton">
+		<li class=" link" onclick="installPWA()" id="pwaButton">
 			<img style="color: white" src="/images/PWA.svg" alt="PWA">
 			<p>Install PWA</p>
 		</li>
 		<div class="divider"></div>
-		<li onclick='toggleTheme()' id="themeButton">
+		<li class="link" onclick='toggleTheme()' id="themeButton">
 			<img style="transform: rotate(135deg)" src="/images/dark_mode.svg" alt="dark_mode">
 			<p>Dark Mode</p>
-		</li>
-		<div class="divider"></div>
-		<li>
-			<img src="/images/settings.svg" alt="settings">
-			<p>Settings</p>
 		</li>
 	</nav>
 </body>
