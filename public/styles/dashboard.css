@@ -1,18 +1,19 @@
 #harddrives,
 #usage {
+	--size: 100vw;
+
 	display: flex;
+	flex-wrap: nowrap;
 	justify-content: start;
 	align-items: center;
-	flex-wrap: nowrap;
-	overflow-x: auto;
-	--size: 100vw;
+
 	scroll-snap-type: x mandatory;
 
-	max-width: 100%;
+	overflow-x: auto !important;
 }
 
 h2.subtitle {
-	margin: 0.5em 0;
+	margin: 0.7em 0;
 }
 
 .dashboard-container {
@@ -42,7 +43,7 @@ h2.subtitle {
 }
 
 .dashboard-container:not(:first-child):not(:last-child) {
-	margin: 1em 1em;
+	margin: 1em 0.5em;
 }
 
 .canvasContainer {
@@ -78,9 +79,6 @@ canvas {
 	}
 	.dashboard-container {
 		min-width: var(--size) !important;
-	}
-	.dashboard-container {
-		margin: 1em !important;
 	}
 }
 
